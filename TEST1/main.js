@@ -5,9 +5,7 @@ var resultList = [];
 
 window.onload = function () {
   initListFetch()
-  textSearch();
-  genderSearch();
-  dateSearch();
+  backToTop();
 };
 
 const initListFetch = () => {
@@ -81,4 +79,20 @@ const listDOMGenerater = (list) => {
     `;
   }).join('');
 };
+
+const backToTop = () => {
+  var btn = $('.back-to-top');
+
+  $(window).scroll(() => {
+    if ($(window).scrollTop() > 300) {
+      btn.addClass('show');
+    } else {
+      btn.removeClass('show');
+    }
+  });
+
+  btn.on('click', e => {
+    $('html, body').animate({scrollTop:0}, '300');
+  });
+}
 
