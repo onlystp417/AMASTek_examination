@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
@@ -17,22 +18,31 @@
 
     <main>
       <form class="search">
-        <div class="search__field search__field__genfer">
+        <!-- <div class="search__field search__field__genfer">
           <span>性別：</span>
           <input id="male" type="radio" name="gender" value="Male">男</input>
           <input id="female" type="radio" name="gender" value="Female">女</input>
-        </div>
+        </div> -->
         <div class="search__field">
-          <label for="dateSearch">登入時間：</label>
+          <label for="dateSearch">登入日期：</label>
           <input id="dateSearch" type="date">
+          <button id="dateClear">清除日期</button>
         </div>
         <div class="search__field">
           <label for="textSearch">搜尋姓名：</label>
           <input id="textSearch" type="text">
         </div>
       </form>
-      <section class="list"></section>
+      <section class="list">
+        <div class="loading">
+          <div class="loading__spot loading__spot-1"></div>
+          <div class="loading__spot loading__spot-2"></div>
+          <div class="loading__spot loading__spot-3"></div>
+        </div>
+      </section>
     </main>
+
+    <div class="back-to-top"></div>
 
     <!-- JS source -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
