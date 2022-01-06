@@ -1,39 +1,26 @@
 import React from 'react';
-import {
-  Chart as ChartJS,
-  LinearScale,
-  CategoryScale,
-  BarElement,
-  PointElement,
-  LineElement,
-  Legend,
-  Tooltip,
-} from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 
-ChartJS.register(
-  LinearScale,
-  CategoryScale,
-  BarElement,
-  PointElement,
-  LineElement,
-  Legend,
-  Tooltip
-);
+export default function ChartView ({ chartData }) {
+  return <Chart options={options} data={buildChartData(chartData)} />;
+}
 
 const options = {
-  responsive: true,
+  // responsive: true, 此為預設
   maintainAspectRatio: false,
-  plugins: {
-    legend: {
-      position: 'top',
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Bar Chart',
-    },
-  },
   scales: {
+    x: {
+      grid: {
+        offset: false,
+      },
+      ticks: {
+        callback: function(item, index, ticks) {
+          // 回傳空字串會保留節點，但 tick 為空
+          // 回傳 undefined 或 null 節點會消失，代表 grid 也不會顯示
+          return !(index % 2) ? this.getLabelForValue(item) : null;
+        }
+      }
+    },
     'left-y-axis': {
       type: 'linear',
       position: 'left',
@@ -49,10 +36,21 @@ const options = {
   }
 };
 
-
-const labels = ['2020-01-01', '2020-01-02', '2020-01-03', '2020-01-04', '2020-01-05', '2020-01-06', '2020-01-07'];
-
 function buildChartData(data) {
+  const labels = [
+    '2020-01-01',
+    '2020-01-02',
+    '2020-01-03',
+    '2020-01-04',
+    '2020-01-05',
+    '2020-01-06',
+    '2020-01-07',
+    '2020-01-08',
+    '2020-01-09',
+    '2020-01-10',
+    '2020-01-11',
+  ];
+
   return {
     labels,
     datasets: [
@@ -99,7 +97,3 @@ function buildChartData(data) {
   }
   
 };
-
-export default function ChartView ({ chartData }) {
-  return <Chart options={options} data={buildChartData(chartData)} />;
-}
