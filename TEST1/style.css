@@ -32,7 +32,7 @@ main {
   position: sticky;
   top: -1px;
   padding: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   background-color: #777;
   color: #fff;
   opacity: .8;
@@ -64,6 +64,7 @@ main {
   background: #fff;
   border: 1px solid #eee;
   border-radius: 5px;
+  box-shadow: 2px 2px 5px #00000066;
 }
 
 .user h3, p {
