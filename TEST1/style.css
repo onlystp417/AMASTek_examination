@@ -88,6 +88,20 @@ main {
   margin: 0 10px 10px;
 }
 
+.user__field {
+  width: 100%;
+  display: flex;
+}
+
+.user__field label {
+  flex: 0 0 80px;
+}
+
+.user__field span {
+  width: calc(100% - 80px);
+  word-wrap:break-word;
+}
+
 @media (min-width: 576px) {
   .search {
     flex-direction: row;

@@ -88,11 +88,11 @@ const listDOMGenerater = (list) => {
     return `
       <div class="user__wrapper">
         <div id="${user.id}" class="user">
-          <h3>姓名: ${user.name}</h3>
-          <p>電子信箱: ${user.email}</p>
-          <p>性別: ${user.gender}</p>
-          <p>登入時間: ${user.login_at}</p>
-          <p>介紹: ${user.description}</p>
+          <h3 class="user__field"><label>姓名:</label><span> ${user.name}</span></h3>
+          <p class="user__field"><label>電子信箱:</label><span> ${user.email}</span></p>
+          <p class="user__field"><label>性別:</label><span> ${user.gender}</span></p>
+          <p class="user__field"><label>登入時間:</label><span> ${user.login_at}</span></p>
+          <p class="user__field"><label>介紹:</label><span> ${user.description}</span></p>
         </div>
       </div>
     `;
