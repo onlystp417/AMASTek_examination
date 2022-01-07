@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-// import BarChart from './components/Chart';
 import ChartView from './components/ChartView';
 import axiosAPI from './libs/axios';
 

@@ -4,11 +4,12 @@ import {
   LinearScale,
   CategoryScale,
   BarElement,
+  BarController,
   PointElement,
   LineElement,
+  LineController,
   Legend,
-  Tooltip,
-  TimeScale
+  Tooltip
 } from 'chart.js';
 
 import 'chartjs-adapter-date-fns';
@@ -17,9 +18,10 @@ ChartJS.register(
   LinearScale,
   CategoryScale,
   BarElement,
+  BarController,
   PointElement,
   LineElement,
+  LineController,
   Legend,
-  Tooltip,
-  TimeScale
+  Tooltip
 );
