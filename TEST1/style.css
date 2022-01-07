@@ -40,8 +40,17 @@ main {
 
 .search__field {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   margin-right: 20px;
+}
+
+.search__field:first-child {
+  margin-bottom: 20px;
+}
+
+.search__field > div {
+  display: flex;
+  align-items: center;
 }
 
 
@@ -77,6 +86,19 @@ main {
 
 .empty-result {
   margin: 0 10px 10px;
+}
+
+@media (min-width: 576px) {
+  .search {
+    flex-direction: row;
+    align-items: center;
+  }
+  .search__field {
+    flex-direction: row;
+  }
+  .search__field:first-child {
+    margin-bottom: 0;
+  }
 }
 
 @media (min-width: 786px) {
